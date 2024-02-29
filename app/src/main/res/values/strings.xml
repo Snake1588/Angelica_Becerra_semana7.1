@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Angelica_Becerra_semana7.1</string>
+    <string name="username_hint">Usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="welcome_message">Bienvenido %1$s</string>
 </resources>
