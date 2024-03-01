@@ -14,7 +14,18 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val mainIntent = Intent(this@SplashActivity, LoginActivity::class.java)
+
+            val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+            val username = sharedPreferences.getString("username", null)
+
+            val mainIntent = if (username != null) {
+
+                Intent(this, WelcomeActivity::class.java)
+            } else {
+
+                Intent(this, LoginActivity::class.java)
+            }
+
             startActivity(mainIntent)
             finish()
         }, SPLASH_DISPLAY_LENGTH)
